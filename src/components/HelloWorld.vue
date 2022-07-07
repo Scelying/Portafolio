@@ -12,12 +12,12 @@
       </v-col>
 
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Bienvenido a mi portafolio</h1>
+        <h1 class="display-2 font-weight-bold mb-3">Portafolio en construcción</h1>
 
         <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
+          Desarrollado en Vue con Vuetify,
+          <br />Contacto LinkedIn: 
+          <a href="https://www.linkedin.com/in/sebastian-cely/" target="_blank">Sebastian Cely</a>
         </p>
       </v-col>
 
