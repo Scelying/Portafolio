@@ -1,22 +1,24 @@
 <template>
   <v-app>
-    <v-app-bar color="deep-purple accent-4" dark>
+
+    <v-app-bar color="cyan" app clipped-left dark round collapse-on-scroll fixed>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Portafolio Full Stack</v-toolbar-title>
-
-      <v-spacer></v-spacer>
+      <v-app-bar-title class="title">Portafolio Full Stack</v-app-bar-title>
     </v-app-bar>
 
+    <v-navigation-drawer app clipped v-model="drawer" fixed temporary>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            Aplicaciones
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
 
+      <v-divider></v-divider>
 
-    <v-main>
-        <v-navigation-drawer v-model="drawer" absolute bottom temporary>
       <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
+        <v-list-item-group v-model="group" active-class="cyan--text text--accent-4">
           <v-list-item>
             <v-list-item-title>Lista de Tareas</v-list-item-title>
           </v-list-item>
@@ -33,18 +35,31 @@
             <v-list-item-title>Chat en vivo</v-list-item-title>
           </v-list-item>
 
-                    <v-list-item>
+          <v-list-item>
             <v-list-item-title>Tienda en linea</v-list-item-title>
           </v-list-item>
 
-                    <v-list-item>
+          <v-list-item>
             <v-list-item-title>Juego embebido</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-      <HelloWorld />
+
+    <v-main>
+      <v-sheet>
+        <v-container style="height: 1000px" fluid>
+          <HelloWorld />
+        </v-container>
+      </v-sheet>
     </v-main>
+
+    <v-footer fixed>
+      <v-col class="text-center" cols="12">
+        2022 — <strong>Sebatian Cely</strong>
+      </v-col>
+    </v-footer>
+
   </v-app>
 </template>
 
