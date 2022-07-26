@@ -48,9 +48,29 @@
                 ></v-simple-checkbox>
                 &nbsp;{{ newTask.name }}
                 <v-spacer></v-spacer>
-                <v-icon color="error darken-1" v-on:click="deleteTask(index)" right>{{
-                  icons.mdiDelete
-                }}</v-icon>
+                <div>
+                  <v-dialog v-model="dialog" max-width="500px">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon v-bind="attrs" color="error darken-1" v-on="on" right>{{
+                        icons.mdiDelete
+                      }}</v-icon>
+                    </template>
+
+                    <v-card>
+                      <v-card-title class="red darken-2 white--text" text-color="white">
+                        Precaución
+                      </v-card-title>
+                      <br />
+                      <v-card-text> ¿Desea borrar la tarea seleccionada?</v-card-text>
+                      <v-divider></v-divider>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn @click="deleteTask(index)"> Si</v-btn>
+                        <v-btn @click="dialog = false"> No</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </div>
               </v-list-item>
             </v-list-item-group>
           </v-list>
@@ -78,12 +98,29 @@
                     &nbsp; {{ taskCompleted.name }}
                   </div>
                   <v-spacer></v-spacer>
-                  <v-icon
-                    color="error darken-1"
-                    v-on:click="deleteCompleteTask(index)"
-                    right
-                    >{{ icons.mdiDelete }}</v-icon
-                  >
+                  <div>
+                    <v-dialog v-model="dialog" max-width="500px">
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-icon v-bind="attrs" color="error darken-1" v-on="on" right>{{
+                          icons.mdiDelete
+                        }}</v-icon>
+                      </template>
+
+                      <v-card>
+                        <v-card-title class="red darken-2 white--text">
+                          Precaución
+                        </v-card-title>
+                        <br />
+                        <v-card-text> ¿Desea borrar la tarea seleccionada?</v-card-text>
+                        <v-divider></v-divider>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn @click="deleteCompleteTask(index)"> Si</v-btn>
+                          <v-btn @click="dialog = false"> No</v-btn>
+                        </v-card-actions>
+                      </v-card>
+                    </v-dialog>
+                  </div>
                 </v-list-item>
               </v-list-item-group>
             </v-list>
@@ -105,6 +142,7 @@ export default {
       listTask: [],
       completedTask: [],
       alertState: false,
+      dialog: false,
       icons: {
         mdiDelete,
       },
@@ -127,6 +165,7 @@ export default {
     },
     deleteTask(index) {
       this.listTask.splice(index, 1);
+      this.dialog = false;
     },
     completeTask(index) {
       this.listTask[index].completed = true;
@@ -135,6 +174,7 @@ export default {
     },
     deleteCompleteTask(index) {
       this.completedTask.splice(index, 1);
+      this.dialog = false;
     },
 
     resetTask(index) {
