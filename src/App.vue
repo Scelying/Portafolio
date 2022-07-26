@@ -10,7 +10,7 @@
       <v-divider></v-divider>
 
       <v-list nav dense>
-        <v-list-item-group v-model="group" active-class="cyan--text text--accent-4">
+        <v-list-item-group active-class="cyan--text text--accent-4">
           <router-link style="text-decoration: none; color: inherit" to="/">
             <v-list-item>
               <v-list-item-title>Lista de Tareas</v-list-item-title>
@@ -84,10 +84,10 @@ export default {
     drawer: false,
   }),
 
-  watch: {
-    group() {
-      this.drawer = false;
-    },
-  },
+  // watch: {
+  //   group() {
+  //     this.drawer = false;
+  //   },
+  // },
 };
 </script>
