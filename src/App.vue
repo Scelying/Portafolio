@@ -40,9 +40,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar color="grey darken-3" clipped-left dark shaped collapse-on-scroll fixed>
+    <v-app-bar color="grey darken-3" clipped-left dark fixed>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title class="text-no-wrap">Portafolio en Vue</v-app-bar-title>
+      <v-app-bar-title class="text-no-wrap">Portafolio de Aplicaciones</v-app-bar-title>
     </v-app-bar>
 
     <v-main>
