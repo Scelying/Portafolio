@@ -12,6 +12,16 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/todolist',
+    name: 'todolist',
+    component: () => import('../components/ToDoList.vue')
+  },
+  {
+    path: '/weatherapp',
+    name: 'weatherapp',
+    component: () => import('../components/WeatherApp.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     component: () => import('../views/AboutView.vue')

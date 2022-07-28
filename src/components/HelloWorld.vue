@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <v-row style="height: 50px; width: 100%"> </v-row>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -14,14 +13,6 @@
 
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">Portafolio en construcción</h1>
-
-        <p class="subheading font-weight-regular">
-          Desarrollado en Vue con Vuetify,
-          <br />Contacto LinkedIn:
-          <a href="https://www.linkedin.com/in/sebastian-cely/" target="_blank"
-            >Sebastian Cely</a
-          >
-        </p>
       </v-col>
 
       <v-col class="mb-5" cols="12">
